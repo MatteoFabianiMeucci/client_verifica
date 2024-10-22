@@ -19,8 +19,9 @@ public class Main {
         BufferedReader in = new BufferedReader(new InputStreamReader(s.getInputStream()));
         DataOutputStream out = new DataOutputStream(s.getOutputStream());
 
-        String stringaInviata;
+        
         String stringaRicevuta;
+        String stringaInviata;
         boolean acceso = true;
 
         System.out.println("Prova ad indovinare un numero randomico\n Inserisci numero: ");
@@ -40,7 +41,16 @@ public class Main {
 
                 case "=":
                     System.out.println("Valore corretto");
-                    System.out.println("Ci hai messo: " + in.readLine() + " tentativi"); 
+                    System.out.println("Ci hai messo: " + in.readLine() + " tentativi");
+                    System.out.println("Vuoi riprovare?\n Digita 'y' o 'n': ");
+                    stringaInviata = scanner.nextLine();
+                    out.writeBytes(stringaInviata + "\n");
+
+                    if(stringaInviata.equals("y")){
+                        System.out.println("Inserisci numero: ");
+                    } else{
+                        acceso = false;
+                    }
                     break;
 
                 case "!":
