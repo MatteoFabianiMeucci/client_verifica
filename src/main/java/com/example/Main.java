@@ -42,15 +42,7 @@ public class Main {
                 case "=":
                     System.out.println("Valore corretto");
                     System.out.println("Ci hai messo: " + in.readLine() + " tentativi");
-                    System.out.println("Vuoi riprovare?\n Digita 'y' o 'n': ");
-                    stringaInviata = scanner.nextLine();
-                    out.writeBytes(stringaInviata + "\n");
-
-                    if(stringaInviata.equals("y")){
-                        System.out.println("Inserisci numero: ");
-                    } else{
-                        acceso = false;
-                    }
+                    acceso = false;
                     break;
 
                 case "!":
